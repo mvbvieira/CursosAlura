@@ -35,3 +35,53 @@
 ; (Integer/parseInt "1"), e troque o "1" pela String a ser convertida.
 
 (defn convert [x] ())
+
+; Aula 5 - Funções recursivas e recursão de cauda
+
+; Essa foi a função que escrevemos no capítulo 2:
+
+(defn fib[x]
+    (if (= x 0) 0
+    (if (= x 1) 1
+    (+ (fib (- x 1)) (fib (- x 2))))))
+
+; Faça com que ela agora use recursão de cauda. Para isso, você precisa usar
+; loop e recur. Como dica, veja a estrutura abaixo, e substitua os ?:
+
+(defn fib[x]
+  (loop [a 1 b 1 numero 2]
+    (if
+      (= numero x) ???
+      (recur ? (+ ? ?) (inc ?))
+      )
+    ))
+
+; Resposta
+
+(defn fib[x]
+    (loop [a 1 b 1 numero 2]
+        (if
+            (= numero x) b
+            (recur b (+ a b) (inc numero))
+        )
+    ))
+
+; Escreva uma função soma que recebe um número n e retorna a soma de 1 até n.
+; Por exemplo, se n = 5, ele retorna 15, que é 1+2+3+4+5. Use recursão de
+; cauda.
+
+; Para ajudar, veja o esqueleto abaixo e complete os ?.
+
+(defn soma[n]
+
+    (loop [contador 1 soma 0]
+        (if (> contador n) ?
+        (recur (?) (?)))))
+
+; Resposta
+
+(defn soma[n]
+
+    (loop [contador 1 soma 0]
+        (if (> contador n) soma
+        (recur (inc contador) (+ soma contador)))))
