@@ -23,3 +23,15 @@
 (def palavra #{"A" "L" "U" "R"})
 (contains? palavra "A")
 (contains? palavra "O")
+
+; VIDEO 4
+
+; Defina a função:
+
+(defn le-letra! [] (read-line))
+
+; Agora, escreva um programa que pega uma string, converte para inteiro, e
+; devolva o resultado da multiplicação por 7. Para converter, use
+; (Integer/parseInt "1"), e troque o "1" pela String a ser convertida.
+
+(defn convert [x] ())
